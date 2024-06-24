@@ -1,44 +1,4 @@
-/*
-#include "twi.h"
 
-void TWI_Init(void) {
-	TWSR = 0x00; // Configura el prescaler en 1
-	TWBR = (uint8_t)TWBR_val; // Calcula el valor del baud rate
-	TWCR = (1<<TWEN); // Habilita TWI
-}
-
-void TWI_Start(void) {
-	TWCR = (1<<TWSTA) | (1<<TWEN) | (1<<TWINT);
-	while (!(TWCR & (1<<TWINT))); // Espera a que se complete la condición de start
-}
-
-void TWI_Stop(void) {
-	TWCR = (1<<TWSTO) | (1<<TWEN) | (1<<TWINT);
-}
-
-void TWI_Write(uint8_t data) {
-	TWDR = data;
-	TWCR = (1<<TWEN) | (1<<TWINT);
-	while (!(TWCR & (1<<TWINT))); // Espera a que la escritura se complete
-}
-
-uint8_t TWI_Read_ACK(void) {
-	TWCR = (1<<TWEN) | (1<<TWINT) | (1<<TWEA);
-	while (!(TWCR & (1<<TWINT))); // Espera a que la lectura se complete
-	return TWDR;
-}
-
-uint8_t TWI_Read_NACK(void) {
-	TWCR = (1<<TWEN) | (1<<TWINT);
-	while (!(TWCR & (1<<TWINT))); // Espera a que la lectura se complete
-	return TWDR;
-}*/
-/*
- * twi.c
- *
- * Created: 10/6/2024 18:29:52
- *  Author: Alexis
- */ 
 #include "twi.h"
 
 void TWI_Init(void) {
