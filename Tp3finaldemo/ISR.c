@@ -15,6 +15,8 @@
 extern volatile uint8_t enviar_datos; // Bandera para controlar el envío de datos
 
 ISR(USART_RX_vect) {
+	//SerialPort_Send_String("se recibio algun caracter\r\n");
+
 	char recibir_caracter = UDR0; // Leer el carácter recibido
 
 	if (recibir_caracter == 's' || recibir_caracter == 'S') {
